@@ -2,7 +2,7 @@ var mysql = require("mysql");
 var inquirer = require("inquirer");
 var Table = require('cli-table');
 
-var table = new Table({head: ['item_id', 'product_name','price'], style: {head:[], border:[], 'padding-left':1, 'padding-right': 1 }})
+var table = new Table({head: ['id', 'product_name','price'], style: {head:[], border:[], 'padding-left':1, 'padding-right': 1 }})
 
 // create the connection information for the sql database
 var connection = mysql.createConnection({
@@ -26,9 +26,6 @@ var stockCompare;
 
 connection.connect(function(err){
     if(err) throw err;
-
-    
-
     afterConnection();
 
 })
