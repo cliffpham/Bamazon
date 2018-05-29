@@ -25,8 +25,6 @@ connection.connect(function (err) {
     if (err) throw err;
 })
 
-
-
 firstQuestion();
 
 function firstQuestion() {
@@ -80,9 +78,9 @@ function viewLow() {
         for (var i = 0; i < res.length; i++) {
             if (res[i].stock_quantity <= 5) {
                 table.push([res[i].id, res[i].product_name, res[i].price, res[i].stock_quantity]);
-            }
-            console.log(table.toString());
+            }        
         }
+        console.log(table.toString());
     });
     connection.end();
 }
