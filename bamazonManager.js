@@ -1,3 +1,5 @@
+///////////////////////////////////boilerplate//////////////////////////////////////
+
 var mysql = require("mysql");
 var inquirer = require("inquirer");
 var Table = require('cli-table');
@@ -27,8 +29,10 @@ connection.connect(function (err) {
 
 firstQuestion();
 
+///////////////////////////////////functions////////////////////////////////////////
+
 function firstQuestion() {
-    inquirer.prompt([/* Pass your questions in here */
+    inquirer.prompt([
         {
             type: 'list',
             name: 'option',
@@ -119,10 +123,9 @@ function addInventory() {
                 [
                     {
                         stock_quantity: totalAmount
-                        // (original stock var minus user input)
                     },
                     {
-                        id: stockSelect//needs to target specific item
+                        id: stockSelect
                     }
                 ],
                 function (err, res) {
